@@ -29,19 +29,26 @@ class Instructor extends Person {
         let amount = Math.floor(Math.random()*10);
         if (direction == '+'){
             student.grade += amount;
+            if (student.grade > 100){
+                student.grade = 100;
+            }  
+            if (student.grade < 0){
+                student.grade = 0;
+            }
             console.log(`${student.name}'s grade has been updated to ${student.grade}`);
         }else if (direction == "-"){
             student.grade -= amount;
+            if (student.grade > 100){
+                student.grade = 100;
+            }  
+            if (student.grade < 0){
+                student.grade = 0;
+            }
             console.log(`${student.name}'s grade has been updated to ${student.grade}`);
         }else {
             console.log("Direction must be either + or -  No changes made!");
         }
-        if (student.grade > 100){
-            student.grade = 100;
-        }  
-        if (student.grade < 0){
-            student.grade = 0;
-        }
+
     }
 
     
@@ -93,19 +100,26 @@ class ProjectManager extends Person{
         let amount = Math.floor(Math.random()*10);
         if (direction == '+'){
             student.grade += amount;
+            if (student.grade > 100){
+                student.grade = 100;
+            }  
+            if (student.grade < 0){
+                student.grade = 0;
+            }
             console.log(`${student.name}'s grade has been updated to ${student.grade}`);
         }else if (direction == "-"){
             student.grade -= amount;
+            if (student.grade > 100){
+                student.grade = 100;
+            }  
+            if (student.grade < 0){
+                student.grade = 0;
+            }
             console.log(`${student.name}'s grade has been updated to ${student.grade}`);
         }else {
             console.log("Direction must be either + or -  No changes made!");
         }
-        if (student.grade > 100){
-            student.grade = 100;
-        }  
-        if (student.grade < 0){
-            student.grade = 0;
-        }
+
     }
 
     
