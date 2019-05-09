@@ -24,6 +24,26 @@ class Instructor extends Person {
     grade(student, subject){
         console.log(`${student.name} receives a perfect score on ${subject}`);
     }
+    changeGrade(student, direction){
+   
+        let amount = Math.floor(Math.random()*10);
+        if (direction == '+'){
+            student.grade += amount;
+        }else if (direction == "-"){
+            student.grade -= amount;
+        }else {
+            console.log("Direction must be either + or -");
+        }
+        if (student.grade > 100){
+            student.grade = 100;
+        }  
+        if (student.grade < 0){
+            student.grade = 0;
+        }
+        console.log(`${student.name}'s grade has been updated to ${student.grade}`);
+    }
+
+    
 }
 
 class Student extends Person {
@@ -32,6 +52,7 @@ class Student extends Person {
         this.previousBackground = sArgs.previousBackground;
         this.className = sArgs.className;
         this.favSubjects = sArgs.favSubjects;
+        this.grade = sArgs.grade;
     }
     listSubjects(){
         for(let i = 0; i<this.favSubjects.length; i++){
@@ -43,6 +64,14 @@ class Student extends Person {
     }
     sprintChallenge(subject){
         console.log(`${this.name} has begun sprint challenge for ${subject}`);
+    }
+    graduate(){
+        if (this.grade >= 70){
+            console.log(`Congratulations ${this.name}, you are eligible to graduate!`)
+        }else{
+            console.log(`We're sorry ${this.name}, you need more points to graduate!`)
+  
+        }
     }
 }
 
@@ -58,6 +87,26 @@ class ProjectManager extends Person{
     debugsCode(student, subject){
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
+    changeGrade(student, direction){
+   
+        let amount = Math.floor(Math.random()*10);
+        if (direction == '+'){
+            student.grade += amount;
+        }else if (direction == "-"){
+            student.grade -= amount;
+        }else {
+            console.log("Direction must be either + or -");
+        }
+        if (student.grade > 100){
+            student.grade = 100;
+        }  
+        if (student.grade < 0){
+            student.grade = 0;
+        }
+        console.log(`${student.name}'s grade has been updated to ${student.grade}`);
+    }
+
+    
 }
 
 
@@ -77,7 +126,8 @@ karl = new Student({
     location: 'Highland',
     previousBackground: 'management',
     className: 'WEB20',
-    favSubjects: ['Java', 'javaScript', 'HTML']
+    favSubjects: ['Java', 'javaScript', 'HTML'],
+    grade: 65
 })
 
 josh = new ProjectManager({
@@ -101,4 +151,71 @@ dan.grade(karl, "java");
 
 josh.standUp('web20');
 josh.debugsCode(karl, 'react');
+
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '-');
+dan.changeGrade(karl, '-');
+dan.changeGrade(karl, '-');
+dan.changeGrade(karl, '-');
+dan.changeGrade(karl, '-');
+karl.graduate();
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+karl.graduate();
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+josh.changeGrade(karl, '+');
+karl.graduate();
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
+josh.changeGrade(karl, '-');
 
